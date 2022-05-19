@@ -1,6 +1,6 @@
     window.onload = async function() { 
 
-	// copy info from functions.js
+	// copy asmLibraryArg from functions.js
 	var asmLibraryArg = {};
 	    
     	// copy info from functions.js
