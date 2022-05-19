@@ -1,5 +1,8 @@
     window.onload = async function() { 
 
+	// copy info from functions.js
+	var asmLibraryArg = {};
+	    
     	// copy info from functions.js
     	var info = {
 		    'env': asmLibraryArg,
