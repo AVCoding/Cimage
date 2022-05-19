@@ -15,17 +15,10 @@
         wasmExports = wasmObj.instance.exports; //exported functions
         console.log(wasmExports);
 
-	var imageData = [1,2,3];
-        const { length } = imageData;
-        const memory = Module._malloc(length); // Allocating WASM memory
-        HEAPU8.set(imageData, memory); // Copying JS image data to WASM memory
-        _grayScale(memory, length); // Calling WASM method
-        const filteredImageData = HEAPU8.subarray(memory, memory + length); // Converting WASM data to JS Image data
-        _free(memory); // Freeing WASM memory
-        return filteredImageData;
+
 
         document.getElementById('getSqrbtn').addEventListener("click", function(){
-        	document.getElementById('result').innerText =  _getSqr( document.getElementById('sqrinput').value ); 
+        	document.getElementById('result').innerText =  wasmExports.getSqr( document.getElementById('sqrinput').value ); 
         });
 
     }
