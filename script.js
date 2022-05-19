@@ -17,7 +17,7 @@
 
 	var imageData = [1,2,3];
         const { length } = imageData;
-        const memory = _malloc(length); // Allocating WASM memory
+        const memory = Module._malloc(length); // Allocating WASM memory
         HEAPU8.set(imageData, memory); // Copying JS image data to WASM memory
         _grayScale(memory, length); // Calling WASM method
         const filteredImageData = HEAPU8.subarray(memory, memory + length); // Converting WASM data to JS Image data
