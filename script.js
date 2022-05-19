@@ -15,6 +15,7 @@
         wasmExports = wasmObj.instance.exports; //exported functions
         console.log(wasmExports);
 
+	var imageData = [1,2,3];
         const { length } = imageData;
         const memory = _malloc(length); // Allocating WASM memory
         HEAPU8.set(imageData, memory); // Copying JS image data to WASM memory
